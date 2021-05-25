@@ -1,11 +1,12 @@
-import "./App.css";
+
 import { BrowserRouter as Router } from "react-router-dom";
+import Welcome from "../containers/Welcome/Welcome"
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <p className="">This is a simple web page !!</p>
+         <Welcome />
       </div>
     </Router>
   );
