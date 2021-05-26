@@ -1,7 +1,10 @@
 import logo from "./images/logoS.svg";
-import feature_one from "./images/f1.svg";
-import feature_two from "./images/f2.svg";
-import feature_three from "./images/f3.svg";
-import feature_four from "./images/f4.svg";
+import course from "./images/course.svg";
+import news from "./images/news.svg";
+import emploi from "./images/emploi.svg";
+import land_one from "./images/tem.svg";
+import land_two from "./images/temp.svg";
+import teaching from "./images/teacing.svg";
+import exams from "./images/exams.svg"
 export const Logo = logo ;
-export {  feature_one , feature_two , feature_three , feature_four};
+export {  emploi , course , news , exams , land_one , land_two , teaching};

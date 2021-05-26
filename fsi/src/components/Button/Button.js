@@ -5,7 +5,7 @@ function Button(props) {
     <div>
       <button
         type="button"
-        class="py-2 px-6   bg-primary  focus:ring-primary focus:ring-offset-primary text-white  transition ease-in duration-200 text-center text-base font-semibold  focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+        class="py-3 px-4 text-sm bg-primary  focus:ring-black focus:ring-offset-primary text-white  transition ease-in duration-200 text-center  font-semibold  focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
       >
         {props.children}
       </button>

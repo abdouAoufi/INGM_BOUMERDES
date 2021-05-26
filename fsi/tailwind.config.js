@@ -14,6 +14,7 @@ module.exports = {
       yellow: colors.amber,
       "primary" : "#ff9f68",
       "bgcolor" : "#fff4e3",
+      "weakblack" : "#575151",
     },
     extend: {},
   },

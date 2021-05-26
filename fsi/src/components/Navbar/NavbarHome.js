@@ -7,8 +7,8 @@ import Button from "../Button/Button";
 
 const navigation = [
   { name: "Acceuil", href: "#", current: false },
-  { name: "Sign up", href: "#", current: false },
-  { name: "Information", href: "#", current: false },
+  { name: "Programme", href: "#", current: false },
+  { name: "Cours", href: "#", current: false },
   { name: "Contact", href: "#", current: false },
 ];
 
@@ -18,10 +18,10 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Disclosure as="nav" className="sticky">
+    <Disclosure as="nav" className="sticky max- h-16">
       {({ open }) => (
         <>
-          <div className="sticky max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="sticky max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
             <div className="relative flex  items-center justify-between h-16">
               <div className="flex-1 flex items-center justify-between sm:items-stretch sm:justify-between ">
                 <div className="flex-shrink-0 flex items-center">
@@ -33,11 +33,7 @@ export default function Example() {
                     />
                   </a>
                   <p className="font-bold mt-1">FSI</p>
-                  {/* <img
-                    className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                    alt="Workflow"
-                  /> */}
+                  
                 </div>
                 <div className=" sm:hidden sm:ml-6">
                   <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-black   focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black">
@@ -69,13 +65,13 @@ export default function Example() {
                   </div>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
-                  <Button>Get Started</Button>
+                  <Button>Acceder</Button>
                 </div>
               </div>
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
+          <Disclosure.Panel className="sm:hidden bg-white shadow">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
                 <a
