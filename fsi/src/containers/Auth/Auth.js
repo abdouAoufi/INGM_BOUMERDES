@@ -1,20 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import * as assets from "../../assets/assetes";
+import Modal from "../../components/Modal/Modal";
+import Loader from "../../components/Loader/Loader"
 
 function Auth() {
-  const [isSignUp, setIsSignUp] = useState(false);
+   const [openModal, setOpenModal] = useState(false);
+   const [isSignUp, setIsSignUp] = useState(false);
+   window.document.title = isSignUp ? "sign up" : "login";  
+   
+  useEffect(() => {
+    const clickHandler = ({ target }) => {};
+    document.addEventListener("click", clickHandler);
+    return () => document.removeEventListener("click", clickHandler);
+  });
+
+  // close if the esc key is pressed
+  useEffect(() => {
+    const keyHandler = ({ keyCode }) => {};
+    document.addEventListener("keydown", keyHandler);
+    return () => document.removeEventListener("keydown", keyHandler);
+  });
   const swithAuthMethod = () => {
     setIsSignUp(!isSignUp);
   };
+  const modalHandler = () => {
+    console.log("Open modal ... ! ");
+    setOpenModal(!openModal);
+  };
   return (
     <div>
+      {/* // ! MODAL */}
+      <Modal openModal={openModal}>
+        <div className="text-center m-auto flex flex-col items-center py-4 ">
+          <p className="text-black text-sm font-semibold mb-4">
+            {isSignUp ? "creating your account .." : "login please wait .."}
+          </p>
+          <img src={assets.access} alt="acess to system" className="w-32 mb-4 " />
+          <Loader className="mb-4"/>
+        </div>
+      </Modal>
       <div className=" m-0 sm:m-8 overflow-hidden  bg-white border border-gray-100 sm:rounded-lg flex justify-center flex-1">
-        <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-8">
+        {/* // ! Main form */}
+        <div className="text-center lg:w-1/2 xl:w-5/12 p-6 sm:p-8">
           <div>
             <img alt="logo" src={assets.Logo} className="w-24 mx-auto" />
           </div>
           <div className="mt-12 flex flex-col items-center">
-            <h1 className="text-2xl xl:text-4xl font-extrabold">
+            <h1 className="text-lg lg:text-3xl font-extrabold">
               {isSignUp
                 ? "Rejoignez notre communauté"
                 : "Connectez-vous à votre compte"}
@@ -59,17 +91,23 @@ function Auth() {
               </div>
 
               <div className="mx-auto max-w-xs">
-                <input
-                  className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                  type="email"
-                  placeholder="Email"
-                />
-                <input
-                  className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                  type="password"
-                  placeholder="Password"
-                />
-                <button className="mt-5 text-white tracking-wide font-semibold bg-primary text-gray-100 w-full py-4 rounded-lg hover:shadow-md transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                <form>
+                  <input
+                    className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                    type="email"
+                    placeholder="Email"
+                  />
+                  <input
+                    className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                    type="password"
+                    placeholder="Password"
+                  />
+                </form>
+                {/* //! AUTH BUTTON  */}
+                <button
+                  onClick={modalHandler}
+                  className="mt-5 text-white tracking-wide font-semibold bg-primary text-gray-100 w-full py-4 rounded-lg hover:shadow-md transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                >
                   {isSignUp ? (
                     <svg
                       className="w-6 h-6 -ml-2"
@@ -118,6 +156,7 @@ function Auth() {
             </div>
           </div>
         </div>
+        {/* // ! Background for desktop */}
         <div className="flex-1 bg-bgcolor text-center hidden lg:flex">
           <div
             className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
@@ -125,50 +164,6 @@ function Auth() {
               backgroundImage: `url(${assets.headerSignUp})`,
             }}
           ></div>
-        </div>
-      </div>
-      <div
-        className=" hidden treact-popup fixed inset-0 flex items-center justify-center"
-        style={{ backgroundColor: "rgba(0,0,0,0.3)" }}
-      >
-        <div className="max-w-lg p-8 sm:pb-4 bg-white rounded shadow-lg text-center sm:text-left">
-          <h3 className="text-xl sm:text-2xl font-semibold mb-6 flex flex-col sm:flex-row items-center">
-            <div className="bg-green-200 p-2 rounded-full flex items-center mb-4 sm:mb-0 sm:mr-2">
-              <svg
-                className="text-green-800 inline-block w-5 h-5"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
-              </svg>
-            </div>
-            Free TailwindCSS Component Kit!
-          </h3>
-          <p>
-            I recently released Treact, a{" "}
-            <span className="font-bold">free</span> TailwindCSS Component Kit
-            built with React.
-          </p>
-          <p className="mt-2">
-            It has 52 different UI components, 7 landing pages, and 8 inner
-            pages prebuilt. And they are customizable!
-          </p>
-          <div className="mt-8 pt-8 sm:pt-4 border-t -mx-8 px-8 flex flex-col sm:flex-row justify-end leading-relaxed">
-            <button className="close-treact-popup px-8 py-3 sm:py-2 rounded border border-gray-400 hover:bg-gray-200 transition duration-300">
-              Close
-            </button>
-            <a
-              className="font-bold mt-4 sm:mt-0 sm:ml-4 px-8 py-3 sm:py-2 rounded bg-purple-700 text-gray-100 hover:bg-purple-900 transition duration-300 text-center"
-              href="/"
-              target="_blank"
-            >
-              See Treact
-            </a>
-          </div>
         </div>
       </div>
     </div>

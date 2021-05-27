@@ -81,12 +81,12 @@ function Welcome() {
       {/* Features */}
       <div className="md:flex px-12 mb-8 justify-around">
         {features.map((feature) => (
-          <Card title={feature.title} body={feature.body} src={feature.src} />
+          <Card key={feature.title} title={feature.title} body={feature.body} src={feature.src} />
         ))}
       </div>
 
       {/* landing */}
-      <div class="mt-24 mb-12  flex flex-col justify-center place-center flex-wrap px-16 mb-12">
+      <div className="mt-24 mb-12  flex flex-col justify-center place-center flex-wrap px-16 mb-12">
         <div className="flex w-full justify-between items-center flex-col md:flex-row ">
           <div className="lg:w-1/3">
             <h1 className="my-4  text-xl md:text-2xl lg:text-4xl lg:w-5/6  font-bold leading-tight">
