@@ -6,5 +6,6 @@ import land_one from "./images/tem.svg";
 import land_two from "./images/temp.svg";
 import teaching from "./images/teacing.svg";
 import exams from "./images/exams.svg"
+import headerSignUp from "./images/hsingnup.svg";
 export const Logo = logo ;
-export {  emploi , course , news , exams , land_one , land_two , teaching};
+export {  emploi , course , news , exams , land_one , land_two , teaching , headerSignUp};
