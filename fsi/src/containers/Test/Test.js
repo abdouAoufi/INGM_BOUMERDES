@@ -1,36 +1,85 @@
-import React, { useState, useEffect, useRef } from "react";
-import Loader from "../../components/Loader/Loader";
-import Transition from "../../components/Transition/Transition";
-import Modal from "../../components/Modal/Modal";
+import React from "react";
+import { useFormik } from "formik";
 
-function Test() {
-  const [openModal, setOpenModal] = useState(false);
-  const trigger = useRef(null);
+// A custom validation function. This must return an object
+// which keys are symmetrical to our values/initialValues
+const validate = (values) => {
+  const errors = {};
+  if (!values.firstName) {
+    errors.firstName = "Required";
+  } else if (values.firstName.length > 15) {
+    errors.firstName = "Must be 15 characters or less";
+  }
 
-  useEffect(() => {
-    const clickHandler = ({ target }) => {};
-    document.addEventListener("click", clickHandler);
-    return () => document.removeEventListener("click", clickHandler);
+  if (!values.lastName) {
+    errors.lastName = "Required";
+  } else if (values.lastName.length > 20) {
+    errors.lastName = "Must be 20 characters or less";
+  }
+
+  if (!values.email) {
+    errors.email = "Required";
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = "Invalid email address";
+  }
+
+  return errors;
+};
+
+const SignupForm = () => {
+  // Pass the useFormik() hook initial form values, a validate function that will be called when
+  // form values change or fields are blurred, and a submit function that will
+  // be called when the form is submitted
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+    },
+    validate,
+    onSubmit: (values) => {
+      console.log(values);
+      alert(JSON.stringify(values, null, 2));
+    },
   });
-
-  // close if the esc key is pressed
-  useEffect(() => {
-    const keyHandler = ({ keyCode }) => {};
-    document.addEventListener("keydown", keyHandler);
-    return () => document.removeEventListener("keydown", keyHandler);
-  });
-
-  const clickButtonHandler = () => {
-    setOpenModal(true);
-  };
   return (
-    <div>
-      <Modal openModal={openModal}>something like that ...</Modal>
-      <button ref={trigger} onClick={clickButtonHandler}>
-      
-      </button>
-    </div>
-  );
-}
+    <form>
+      <label htmlFor="firstName">First Name</label>
+      <input
+        className="border border-black"
+        id="firstName"
+        name="firstName"
+        type="text"
+        onChange={formik.handleChange}
+        value={formik.values.firstName}
+      />
+      {formik.errors.firstName ? <div>{formik.errors.firstName}</div> : null}
 
-export default Test;
+      <label htmlFor="lastName">Last Name</label>
+      <input
+        className="border border-black"
+        id="lastName"
+        name="lastName"
+        type="text"
+        onChange={formik.handleChange}
+        value={formik.values.lastName}
+      />
+      {formik.errors.lastName ? <div>{formik.errors.lastName}</div> : null}
+
+      <label htmlFor="email">Email Address</label>
+      <input
+        className="border border-black"
+        id="email"
+        name="email"
+        type="email"
+        onChange={formik.handleChange}
+        value={formik.values.email}
+      />
+      {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+
+      <button onClick={formik.handleSubmit}>Submit</button>
+    </form>
+  );
+};
+
+export default SignupForm;
