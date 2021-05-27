@@ -39,7 +39,7 @@ function Welcome() {
       <main>
         <div className="pt-12 bg-bgcolor lg:h-screen">
           <div className=" px-12  mx-auto flex flex-wrap flex-col md:flex-row items-center">
-            <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+            <div className="flex flex-col w-full md:w-2/5 justify-center items-center md:items-start text-center md:text-left">
               <p className=" tracking-loose w-full font-semibold">
                 Êtes-vous fatigué de manquer de nouvelles sur l'université
                 &#127758; ?
@@ -52,7 +52,8 @@ function Welcome() {
               <p className="leading-normal text-2xl mb-8">
                 Un site Web simple pour vous tenir au courant de notre faculté
               </p>
-              <button className="mx-2 lg:mx-0 hover:underline bg-primary text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out">
+              {/* // ! Button */}
+              <button className="mx-2 lg:mx-0  bg-primary text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out">
                 S'inscrire
               </button>
             </div>

@@ -1,12 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import * as assets from "../../assets/assetes";
 import Modal from "../../components/Modal/Modal";
 import Loader from "../../components/Loader/Loader";
 import Alert from "../../components/Alert/Alert";
-import { useForm } from "react-hook-form";
 import { Formik } from "formik";
-const emailExp =
-  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 function Auth() {
   const [openModal, setOpenModal] = useState(false);
@@ -45,7 +42,7 @@ function Auth() {
     displayNotificationHandler(
       "created",
       "created account succefuly just wait to be redirected ",
-      true
+      false
     );
     setTimeout(() => {
       setDisplayNotification(false);
@@ -82,7 +79,7 @@ function Auth() {
           <Loader className="mb-4" />
         </div>
       </Modal>
-      <div className=" m-0 sm:m-12 overflow-hidden  bg-white border border-gray-100 sm:rounded-lg flex justify-center flex-1">
+      <div className=" m-0 sm:m-12 shadow-lg  overflow-hidden  bg-white sm:rounded-lg flex justify-center flex-1">
         {/* // ! Main form */}
         <div className="text-center lg:w-1/2 xl:w-5/12 p-6 sm:p-8">
           <div>
@@ -90,9 +87,7 @@ function Auth() {
           </div>
           <div className="mt-12 flex flex-col items-center">
             <h1 className="text-lg text-black lg:text-4xl font-extrabold">
-              {isSignUp
-                ? "Rejoignez notre "
-                : "Connectez-vous à votre "}
+              {isSignUp ? "Rejoignez notre " : "Connectez-vous à votre "}
               {isSignUp ? (
                 <span className="text-primary">communauté</span>
               ) : (
@@ -150,12 +145,12 @@ function Auth() {
                         values.email
                       )
                     ) {
-                      errors.email = "Invalid email address";
+                      errors.email = "Invalid email address !";
                     }
                     if (!values.password) {
                       errors.password = "Password field is Required";
                     } else if (values.password.length < 8) {
-                      errors.password = "Minumum length is 8";
+                      errors.password = "Minumum length is 8 characters";
                     }
                     return errors;
                   }}
@@ -201,7 +196,7 @@ function Auth() {
 
                       <button
                         onClick={handleSubmit}
-                        className="mt-5 text-white tracking-wide font-semibold bg-primary text-gray-100 w-full py-4 rounded-lg hover:shadow-md transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                        className="mt-5 text-white tracking-wide font-semibold bg-primary text-gray-100 w-full py-4 rounded-lg hover:shadow-lg transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
                       >
                         {isSignUp ? (
                           <svg
@@ -239,22 +234,6 @@ function Auth() {
                     </form>
                   )}
                 </Formik>
-                {/* //! Email */}
-                {/* <input
-                      defaultValue="blick"
-                      className="w-full pl-4 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                      type="email"
-                      placeholder="Email"
-                    /> */}
-                {/* //! Password  */}
-                {/* <input
-                    onChange={passwordChangeHandler}
-                    value={password}
-                    className="w-full pl-4 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                    type="password"
-                    placeholder="Password"
-                  /> */}
-
                 {/* //! AUTH BUTTON  */}
 
                 <p className="mt-6 text-sm text-gray-600 text-center font-semibold">
