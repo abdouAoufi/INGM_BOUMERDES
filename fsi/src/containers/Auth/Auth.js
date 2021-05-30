@@ -5,7 +5,7 @@ import Loader from "../../components/Loader/Loader";
 import Alert from "../../components/Alert/Alert";
 import { Formik } from "formik";
 
-function Auth() {
+function Auth(props) {
   const [openModal, setOpenModal] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
   const [displayNotification, setDisplayNotification] = useState(false);
@@ -46,6 +46,7 @@ function Auth() {
     );
     setTimeout(() => {
       setDisplayNotification(false);
+      props.history.push("/home");
     }, 2000);
   };
 
@@ -72,7 +73,7 @@ function Auth() {
             {isSignUp ? "creating your account .." : "login please wait .."}
           </p>
           <img
-            src={assets.access}
+            src={assets.illustrationSVG.loadingLogin}
             alt="acess to system"
             className="w-32 mb-4 "
           />
@@ -256,7 +257,7 @@ function Auth() {
           <div
             className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url(${assets.headerSignUp})`,
+              backgroundImage: `url(${assets.landSVG.headerSignUp})`,
             }}
           ></div>
         </div>

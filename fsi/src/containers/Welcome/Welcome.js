@@ -1,30 +1,31 @@
 import React from "react";
 import NavbarHome from "../../components/Navbar/NavbarHome";
-import bg from "../../assets/images/hero.png";
 import * as assets from "../../assets/assetes";
 import Card from "../../components/Card/Card";
 import Footer from "../../components/Footer/Footer";
+
+
 function Welcome() {
   window.document.title = "FSI";
   let features = [
     {
       title: "L'actualites",
-      src: assets.news,
+      src: assets.landSVG.news,
       body: "Les admins partage tous qui est important pour leur collegues.",
     },
     {
       title: "Les cours et TD's",
-      src: assets.course,
+      src: assets.landSVG.course,
       body: "On partage les cours avec nos collegues.",
     },
     {
       title: "Empoloi du temp",
-      src: assets.emploi,
+      src: assets.landSVG.emploi,
       body: "On destribuer toujours la deniere mis a jour de l'emploi du temp.",
     },
     {
       title: "Affichage des examens",
-      src: assets.exams,
+      src: assets.landSVG.exams,
       body: "Les profs peuv donner les notes au niveau de site.",
     },
   ];
@@ -59,7 +60,7 @@ function Welcome() {
             </div>
 
             <div className=" w-full md:w-3/5 py-6 text-center">
-              <img className="w-full mx-auto md:w-4/5 z-50" src={bg} alt="bg" />
+              <img className="w-full mx-auto md:w-4/5 z-50" src={assets.landSVG.bgWelcome} alt="bg" />
             </div>
           </div>
         </div>
@@ -104,7 +105,7 @@ function Welcome() {
             </p>
           </div>
           <div className=" lg:w-8/12 mb-12 ">
-            <img src={assets.land_one} alt="bg" className="w-3/5 mx-auto" />
+            <img src={assets.landSVG.land_one} alt="bg" className="w-3/5 mx-auto" />
           </div>
         </div>
 
@@ -121,7 +122,7 @@ function Welcome() {
             </p>
           </div>
           <div className=" lg:w-8/12 mb-12  md:order-1">
-            <img src={assets.teaching} alt="bg" className="w-3/5 mx-auto" />
+            <img src={assets.landSVG.teaching} alt="bg" className="w-3/5 mx-auto" />
           </div>
         </div>
       </div>

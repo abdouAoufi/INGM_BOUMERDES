@@ -14,6 +14,7 @@ module.exports = {
 
     extend: {
       colors: {
+        "litlegray" : "#c4c4c4",
         transparent: "transparent",
         current: "currentColor",
         black: "#3f3b3b",

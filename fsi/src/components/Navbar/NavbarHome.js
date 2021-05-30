@@ -2,8 +2,8 @@
 import { Fragment } from "react";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import logo from "../../assets/images/logoS.svg";
 import Button from "../Button/Button";
+import logo from "../../assets/images/icons/logoS.svg"
 
 const navigation = [
   { name: "Acceuil", href: "#", current: false },
