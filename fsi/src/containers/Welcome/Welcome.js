@@ -5,7 +5,7 @@ import Card from "../../components/Card/Card";
 import Footer from "../../components/Footer/Footer";
 
 
-function Welcome() {
+function Welcome(props) {
   window.document.title = "FSI";
   let features = [
     {
@@ -29,6 +29,10 @@ function Welcome() {
       body: "Les profs peuv donner les notes au niveau de site.",
     },
   ];
+
+  const goToHome = () => {
+    props.history.replace("/auth");
+  }
 
   return (
     <div>
@@ -54,7 +58,7 @@ function Welcome() {
                 Un site Web simple pour vous tenir au courant de notre faculté
               </p>
               {/* // ! Button */}
-              <button className="mx-2 lg:mx-0  bg-primary text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out">
+              <button onClick={goToHome} className="mx-2 lg:mx-0  bg-primary text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out">
                 S'inscrire
               </button>
             </div>

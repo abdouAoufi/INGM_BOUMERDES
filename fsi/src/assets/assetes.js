@@ -8,7 +8,7 @@ import exams from "./images/land/exams.svg";
 import headerSignUp from "./images/land/auth.svg";
 import bgWelcome from "./images/land/hero.png";
 import loadingLogin from "./images/illustration/login.svg";
-import homeICON from "./images/icons/boolICN.svg";
+import homeICON from "./images/icons/homepageICN.svg";
 import timelineICON from "./images/icons/timeLineICN.svg";
 import descICON from "./images/icons/descuICN.svg";
 import courseICON from "./images/icons/courseICN.svg";

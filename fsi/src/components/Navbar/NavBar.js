@@ -1,13 +1,14 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import logo from "../../assets/images/icons/logoS.svg"
+import logo from "../../assets/images/icons/logoS.svg";
+import { Link } from "react-router-dom";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: false },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Desscusion", to: "/descussion", current: false },
+  { name: "Time line", to: "/timeline", current: false },
+  { name: "Course", to: "/course", current: false },
+  { name: "Td", to: "/td", current: false },
 ];
 
 function classNames(...classes) {
@@ -16,28 +17,28 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Disclosure as="nav" className="bg-bgcolor">
+    <Disclosure as="nav" className="bg-bgcolor  shadow-sm ">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex  items-center justify-between h-16">
-              <div className="flex-1 flex px-4 items-center justify-between sm:items-stretch sm:justify-start">
-                <div className="flex-shrink-0 flex items-center">
-                  <a href="/">
-                    <img
-                      className="block  h-8 mr-2 w-auto"
-                      src={logo}
-                      alt="Workflow"
-                    />
-                  </a>
-                  <p className="font-bold mt-1">FSI</p>
-                </div>
-                <div className="hidden sm:block sm:ml-6">
+              <div className="flex-shrink-0 flex items-center">
+                <Link to="/">
+                  <img
+                    className="block  h-8 mr-2 w-auto"
+                    src={logo}
+                    alt="Workflow"
+                  />
+                </Link>
+                <p className="font-bold mt-1">FSI</p>
+              </div>
+              <div className="flex-1 flex px-4 items-center justify-between sm:items-stretch sm:justify-center">
+                <div className="hidden md:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.to}
                         className={classNames(
                           item.current
                             ? "bg-gray-900 text-white"
@@ -47,7 +48,7 @@ export default function Example() {
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -83,41 +84,41 @@ export default function Example() {
                         >
                           <Menu.Item>
                             {({ active }) => (
-                              <a
-                                href="/"
+                              <Link
+                                to="/"
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
                                   "block px-4 py-2 text-sm text-gray-700"
                                 )}
                               >
                                 Your Profile
-                              </a>
+                              </Link>
                             )}
                           </Menu.Item>
                           <Menu.Item>
                             {({ active }) => (
-                              <a
-                                href="/"
+                              <Link
+                                to="/"
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
                                   "block px-4 py-2 text-sm text-gray-700"
                                 )}
                               >
                                 Settings
-                              </a>
+                              </Link>
                             )}
                           </Menu.Item>
                           <Menu.Item>
                             {({ active }) => (
-                              <a
-                                href="/"
+                              <Link
+                                to="/"
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
                                   "block px-4 py-2 text-sm text-gray-700"
                                 )}
                               >
                                 Sign out
-                              </a>
+                              </Link>
                             )}
                           </Menu.Item>
                         </Menu.Items>
@@ -126,7 +127,7 @@ export default function Example() {
                   )}
                 </Menu>
 
-                <Menu as="div" className="ml-3 relative">
+                {/* <Menu as="div" className="ml-3 relative">
                   {({ open }) => (
                     <>
                       <div>
@@ -207,7 +208,7 @@ export default function Example() {
                       </div>
                     </>
                   )}
-                </Menu>
+                </Menu> */}
               </div>
             </div>
           </div>

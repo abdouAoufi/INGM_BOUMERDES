@@ -1,11 +1,47 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
 import Navbar from "../../components/Navbar/NavBar";
+import Descussion from "./Desc/Desc";
+import { Route, Switch } from "react-router-dom";
+import Td from "./Td/Td";
+import Courses from "./Courses/Courses";
+import TimeLine from "./TimeLine/TimeLine";
+import AuthContext from "../../context/authContext";
+import Loader from "../../components/Loader/Loader";
+import PostCard from "../../components/Card/PostCard";
+import Feed from "./Feed/Feed";
 
-function Home() {
+function Home(props) {
+  const authCnt = useContext(AuthContext);
+  const [loading, setLoading] = useState(true);
+  // useEffect(() => {
+  //   if (!authCnt.status) props.history.replace("/welcome");
+  // }, []);
+
+  // useEffect(() => {
+  //   if (authCnt) {
+  //     setTimeout(() => {
+  //       setLoading(false);
+  //     }, 3000);
+  //   }
+  // }, []);
+
   return (
     <div>
       <Navbar />
+      {/* {loading ? (
+        <div className="grid items-center place-items-center h-screen ">
+          <Loader />
+        </div>
+      ) : null} */}
+
+      <Switch>
+        <Route exact path={"/descussion"} render={Descussion} />
+        <Route exact path={"/feed"} render={Feed} />
+        <Route path={"/td"} component={Td} />
+        <Route path={"/course"} component={Courses} />
+        <Route path={"/timeline"} component={TimeLine} />
+      </Switch>
       <BottomNavbar />
     </div>
   );

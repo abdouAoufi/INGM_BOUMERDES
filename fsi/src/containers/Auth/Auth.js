@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect , useContext} from "react";
 import * as assets from "../../assets/assetes";
 import Modal from "../../components/Modal/Modal";
 import Loader from "../../components/Loader/Loader";
 import Alert from "../../components/Alert/Alert";
 import { Formik } from "formik";
+import AuthContext from "../../context/authContext"
 
 function Auth(props) {
   const [openModal, setOpenModal] = useState(false);
@@ -12,6 +13,8 @@ function Auth(props) {
   const [titleN, setTitleN] = useState("");
   const [bodyN, setBodyN] = useState("");
   const [errorN, setErrorN] = useState(false);
+  // ! context 
+  const authCnt = useContext(AuthContext);
 
   window.document.title = isSignUp ? "sign up" : "login";
 
@@ -31,7 +34,7 @@ function Auth(props) {
     setIsSignUp(!isSignUp);
   };
   const clickAuth = (val) => {
-    console.log("Email : ", val.email, "Password : ", val.password);
+    authCnt.changeStatue();
     setOpenModal(!openModal);
     setTimeout(() => {
       closeModal();
@@ -46,7 +49,7 @@ function Auth(props) {
     );
     setTimeout(() => {
       setDisplayNotification(false);
-      props.history.push("/home");
+      props.history.push("/");
     }, 2000);
   };
 
@@ -80,7 +83,7 @@ function Auth(props) {
           <Loader className="mb-4" />
         </div>
       </Modal>
-      <div className=" m-0 sm:m-12 shadow-lg  overflow-hidden  bg-white sm:rounded-lg flex justify-center flex-1">
+      <div className=" my-12 sm:mx-12 shadow-lg border border-gray-100  overflow-hidden  bg-white sm:rounded-lg flex justify-center flex-1">
         {/* // ! Main form */}
         <div className="text-center lg:w-1/2 xl:w-5/12 p-6 sm:p-8">
           <div>
@@ -140,7 +143,7 @@ function Auth(props) {
                   validate={(values) => {
                     const errors = {};
                     if (!values.email) {
-                      errors.email = "Email field is Required";
+                      errors.email = "Email field is required!";
                     } else if (
                       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
                         values.email
@@ -149,9 +152,9 @@ function Auth(props) {
                       errors.email = "Invalid email address !";
                     }
                     if (!values.password) {
-                      errors.password = "Password field is Required";
+                      errors.password = "Password field is required!";
                     } else if (values.password.length < 8) {
-                      errors.password = "Minumum length is 8 characters";
+                      errors.password = "Minumum length is 8 characters!";
                     }
                     return errors;
                   }}
