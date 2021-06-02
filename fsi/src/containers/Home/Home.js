@@ -24,7 +24,20 @@ function Home(props) {
   //       setLoading(false);
   //     }, 3000);
   //   }
-  // }, []);
+  // }, []);]
+
+  const [showNav, setShowNav] = useState(true);
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setShowNav(false);
+    }
+    if (window.scrollY < 50) {
+      setShowNav(true);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, true);
+  }, []);
 
   return (
     <div>
@@ -37,12 +50,12 @@ function Home(props) {
 
       <Switch>
         <Route exact path={"/descussion"} render={Descussion} />
-        <Route exact path={"/feed"} render={Feed} />
+        <Route exact path={"/feed"} render={() => <Feed />} />
         <Route path={"/td"} component={Td} />
         <Route path={"/course"} component={Courses} />
         <Route path={"/timeline"} component={TimeLine} />
       </Switch>
-      <BottomNavbar />
+      {showNav ? <BottomNavbar show={showNav} /> : null}
     </div>
   );
 }

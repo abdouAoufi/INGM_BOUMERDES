@@ -2,7 +2,7 @@ import React from "react";
 import * as assets from "../../assets/assetes";
 import { Link } from "react-router-dom";
 
-function BottomNavbar() {
+function BottomNavbar(props) {
   return (
     <div>
       <section

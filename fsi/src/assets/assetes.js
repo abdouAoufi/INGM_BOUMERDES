@@ -13,7 +13,7 @@ import timelineICON from "./images/icons/timeLineICN.svg";
 import descICON from "./images/icons/descuICN.svg";
 import courseICON from "./images/icons/courseICN.svg";
 import tdICON from "./images/icons/tdICN.svg";
-
+import welcome from "./images/illustration/welcome.svg"
 const landSVG = {
   news,
   emploi,
@@ -34,6 +34,7 @@ const bottomNavigation = {
 };
 const illustrationSVG = {
   loadingLogin,
+  welcome
 };
 export const Logo = logo;
 
