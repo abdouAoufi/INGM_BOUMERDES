@@ -8,7 +8,8 @@ function Feed() {
     <div>
       <HeaderHome />
       <div className=" mx-auto">
-        <PostCard title="La serie 1 + 2" tag="System non linear" />
+        <PostCard title="La serie 1 + 2" tag="System non linear" name="adel"/>
+        <PostCard title="Examen" tag="System embarque" name="salim"/>
       </div>
     </div>
   );

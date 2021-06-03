@@ -8,30 +8,33 @@ import Courses from "./Courses/Courses";
 import TimeLine from "./TimeLine/TimeLine";
 import AuthContext from "../../context/authContext";
 import Loader from "../../components/Loader/Loader";
-import PostCard from "../../components/Card/PostCard";
 import Feed from "./Feed/Feed";
 
 function Home(props) {
+  const minScroll = 20 ;
   const authCnt = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
-  // useEffect(() => {
-  //   if (!authCnt.status) props.history.replace("/welcome");
-  // }, []);
+  useEffect(() => {
+    if (!authCnt.status) props.history.replace("/welcome");
+  }, []);
 
-  // useEffect(() => {
-  //   if (authCnt) {
-  //     setTimeout(() => {
-  //       setLoading(false);
-  //     }, 3000);
-  //   }
-  // }, []);]
+  useEffect(() => {
+    if (authCnt) {
+      setTimeout(() => {
+        setLoading(false);
+        if (authCnt.status) {
+          props.history.push("/feed");
+        }
+      }, 3000);
+    }
+  }, []);
 
   const [showNav, setShowNav] = useState(true);
   const handleScroll = () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > minScroll) {
       setShowNav(false);
     }
-    if (window.scrollY < 50) {
+    if (window.scrollY < minScroll) {
       setShowNav(true);
     }
   };
@@ -42,11 +45,11 @@ function Home(props) {
   return (
     <div>
       <Navbar />
-      {/* {loading ? (
+      {loading ? (
         <div className="grid items-center place-items-center h-screen ">
           <Loader />
         </div>
-      ) : null} */}
+      ) : null}
 
       <Switch>
         <Route exact path={"/descussion"} render={Descussion} />
