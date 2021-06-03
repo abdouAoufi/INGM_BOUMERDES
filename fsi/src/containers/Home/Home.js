@@ -14,9 +14,9 @@ function Home(props) {
   const minScroll = 20 ;
   const authCnt = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    if (!authCnt.status) props.history.replace("/welcome");
-  }, []);
+  // useEffect(() => {
+  //   if (!authCnt.status) props.history.replace("/welcome");
+  // }, []);
 
   useEffect(() => {
     if (authCnt) {

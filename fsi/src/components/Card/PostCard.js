@@ -3,8 +3,8 @@ import React from "react";
 function PostCard(props) {
   const btnClass = "mb-1 md:mb-0 bg-white px-5 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 "
   return (
-    <div className=" w-full bg-white text-black border my-2  rounded-md px-2 py-1">
-      <div className="flex-none lg:flex">
+    <div className=" lg:w-1/2 m-auto lg:shadow w-full bg-white text-black border my-2 rounded-md px-2 py-1">
+      <div className="flex-none ">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <img
@@ -29,7 +29,7 @@ function PostCard(props) {
             />
           </svg>
         </div>
-        <div className="mx-1 rounded-lg overflow-hidden h-full w-full lg:h-48 lg:w-48 lg:mb-0 ">
+        <div className="mx-1 rounded-lg overflow-hidden h-full w-full   lg:mb-0 ">
           <img
             className="object-fit w-full"
             src="https://images.unsplash.com/photo-1585254208021-9f33921350a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"

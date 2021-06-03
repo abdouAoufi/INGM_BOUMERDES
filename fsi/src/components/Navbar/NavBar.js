@@ -5,10 +5,11 @@ import logo from "../../assets/images/icons/logoS.svg";
 import { Link } from "react-router-dom";
 
 const navigation = [
+  { name: "Home", to: "/feed", current: false },
   { name: "Desscusion", to: "/descussion", current: false },
-  { name: "Time line", to: "/timeline", current: false },
   { name: "Course", to: "/course", current: false },
   { name: "Td", to: "/td", current: false },
+  { name: "Time line", to: "/timeline", current: false },
 ];
 
 function classNames(...classes) {

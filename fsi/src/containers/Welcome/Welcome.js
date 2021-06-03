@@ -15,7 +15,7 @@ function Welcome(props) {
     },
     {
       title: "Les cours et TD's",
-      src: assets.landSVG.course,
+      src: assets.landSVG.land_two,
       body: "On partage les cours avec nos collegues.",
     },
     {
