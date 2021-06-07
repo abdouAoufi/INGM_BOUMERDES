@@ -5,7 +5,7 @@ import * as assetes from "../../../assets/assetes"
 
 function Desc() {
   return (
-    <div>
+    <div className="mx-auto">
       <HeaderHome title="Descussion" text="Here you can ask for help !" type="desc"/>
       <div className="flex-auto justify-between w-full">
         <div className=" mx-auto">

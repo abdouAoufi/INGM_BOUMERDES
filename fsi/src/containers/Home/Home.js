@@ -9,9 +9,11 @@ import TimeLine from "./TimeLine/TimeLine";
 import AuthContext from "../../context/authContext";
 import Loader from "../../components/Loader/Loader";
 import Feed from "./Feed/Feed";
+import ModuleList from "../../components/List/ModuleList/ModuleList";
+import ModuleDisplayer from "../../components/List/ModuleList/ModuleDisplayer/ModuleDisplayer";
 
 function Home(props) {
-  const minScroll = 20 ;
+  const minScroll = 20;
   const authCnt = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
   // useEffect(() => {
@@ -50,14 +52,17 @@ function Home(props) {
           <Loader />
         </div>
       ) : null}
-
-      <Switch>
-        <Route exact path={"/descussion"} render={Descussion} />
-        <Route exact path={"/feed"} render={() => <Feed />} />
-        <Route path={"/td"} component={Td} />
-        <Route path={"/course"} component={Courses} />
-        <Route path={"/timeline"} component={TimeLine} />
-      </Switch>
+      <div className="mx-auto lg:w-2/5 md:w-2/3">
+        <Switch>
+          <Route exact path={"/descussion"} render={Descussion} />
+          <Route exact path={"/feed"} render={() => <Feed />} />
+          <Route path={"/td"} component={Td} />
+          <Route path={"/course"} component={Courses} />
+          <Route path={"/timeline"} component={TimeLine} />
+          <Route path={"/semester/list/module"} component={ModuleDisplayer} />
+          <Route path={"/semester/list"} component={ModuleList} />
+        </Switch>
+      </div>
       {showNav ? <BottomNavbar show={showNav} /> : null}
     </div>
   );

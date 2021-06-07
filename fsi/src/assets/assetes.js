@@ -13,7 +13,8 @@ import timelineICON from "./images/icons/timeLineICN.svg";
 import descICON from "./images/icons/descuICN.svg";
 import courseICON from "./images/icons/courseICN.svg";
 import tdICON from "./images/icons/tdICN.svg";
-import welcome from "./images/illustration/welcome.svg"
+import welcome from "./images/illustration/welcome.svg";
+import pdf from "./images/icons/pdf.png"
 const landSVG = {
   news,
   emploi,
@@ -36,6 +37,10 @@ const illustrationSVG = {
   loadingLogin,
   welcome
 };
+
+const icons = {
+  pdf,
+}
 export const Logo = logo;
 
-export { landSVG, illustrationSVG, bottomNavigation };
+export { landSVG, illustrationSVG, bottomNavigation , icons};

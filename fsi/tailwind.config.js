@@ -26,6 +26,9 @@ module.exports = {
         primary: "#ff9f68",
         bgcolor: "#fff4e3",
         weakblack: "#575151",
+        card_one : "#364f6b",
+        card_two : "#f85959",
+        card_three : "#107a8b",
       },
       animation: {
         bounce200: "bounce 1s infinite 200ms",

@@ -6,7 +6,7 @@ function HeaderHome({ title, text, type }) {
   const res = useState(null);
   return (
     <div>
-      <div className=" mx-auto border lg:shadow lg:w-1/2 flex px-4 py-3 justify-between  my-4 rounded">
+      <div className=" mx-auto border lg:shadow  flex px-4 py-3 justify-between  my-4 rounded">
         <div>
           <h1 className="text-2xl font-bold mb-2">{title}</h1>
           <p className="text-base">{text}</p>
