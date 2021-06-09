@@ -3,7 +3,7 @@ import React from "react";
 function Semestre({ year, spec, semestre , click}) {
    let isMaster = year === "Master 1" ? "hidden" : year === "Master 2" ? "hidden" : "block";
   let bg =
-    year === 2 ? "bg-card_one" : year === 3 ? "bg-card_two" : "bg-card_three";
+    year === 2 ? "bg-card_one" : year === 3 ? "bg-card_two" : year === "Master 1" ? "bg-card_three" : "bg-card_four";
   return (
     <div
       onClick={click}
