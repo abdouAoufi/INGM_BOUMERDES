@@ -46,17 +46,7 @@ function BottomNavbar(props) {
               />
               <span className="tab tab-explore block text-xs">Courses</span>
             </Link>
-            <Link
-              to="/td"
-              className="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
-            >
-              <img
-                src={assets.bottomNavigation.tdICON}
-                alt="courses"
-                className="h-8 m-auto mb-1"
-              />
-              <span className="tab tab-whishlist block text-xs">TD</span>
-            </Link>
+
             <Link
               to="/timeline"
               className="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
@@ -67,6 +57,17 @@ function BottomNavbar(props) {
                 className="h-8 m-auto mb-1"
               />
               <span className="tab tab-account block text-xs">Emploi</span>
+            </Link>
+            <Link
+              to="/notes"
+              className="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
+            >
+              <img
+                src={assets.bottomNavigation.markICOn}
+                alt="courses"
+                className="h-8 m-auto mb-1"
+              />
+              <span className="tab tab-whishlist block text-xs">Notes</span>
             </Link>
           </div>
         </section>

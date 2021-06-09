@@ -1,6 +1,7 @@
 import React from "react";
 import HeaderHome from "../../../components/HeaderHome/HeaderHome";
 import Semestre from "../../../components/List/SemestreList/Semestre";
+import * as assets from "../../../assets/assetes"
 
 function Courses(props) {
   const nextPageHandler = () => {
@@ -13,6 +14,7 @@ function Courses(props) {
         <HeaderHome
           title="Courses"
           text="Here you can find the latest course "
+          image={assets.headerIcons.courseIconHeader}
         />
         <div className="">
           <Semestre click={nextPageHandler} year={2} spec="Electronique" semestre={3} />

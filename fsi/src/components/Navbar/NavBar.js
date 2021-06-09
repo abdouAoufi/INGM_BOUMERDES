@@ -8,8 +8,8 @@ const navigation = [
   { name: "Home", to: "/feed", current: false },
   { name: "Desscusion", to: "/descussion", current: false },
   { name: "Course", to: "/course", current: false },
-  { name: "Td", to: "/td", current: false },
   { name: "Time line", to: "/timeline", current: false },
+  { name: "Notes", to: "/notes", current: false },
 ];
 
 function classNames(...classes) {

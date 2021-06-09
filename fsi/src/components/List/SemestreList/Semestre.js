@@ -10,8 +10,7 @@ function Semestre({ year, spec, semestre , click}) {
       className={`w-full cursor-pointer rounded-2xl ${bg} p-4 mx-auto my-2 shadow-md`}
     >
       <h1 className="mb-3 text-white font-semibold text-3xl  ">
-        {" "}
-        {year}{" "}
+        {year}
         <span className={`${isMaster} inline`}>
           <span>eme</span> Anee{" "}
         </span>
@@ -19,7 +18,7 @@ function Semestre({ year, spec, semestre , click}) {
       <div className="flex text-white justify-between items-baseline">
         <p className="italic font-thin">{spec} </p>
         <h3 className="text-xl font-medium">
-          Semestre{" "}
+          Semestre
           <span className="font-semibold  ml-1 text-5xl">{semestre}</span>
         </h3>
       </div>

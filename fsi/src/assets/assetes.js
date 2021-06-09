@@ -12,9 +12,12 @@ import homeICON from "./images/icons/homepageICN.svg";
 import timelineICON from "./images/icons/timeLineICN.svg";
 import descICON from "./images/icons/descuICN.svg";
 import courseICON from "./images/icons/courseICN.svg";
-import tdICON from "./images/icons/tdICN.svg";
+import markICOn from "./images/icons/marksICN.svg";
 import welcome from "./images/illustration/welcome.svg";
-import pdf from "./images/icons/pdf.png"
+import pdf from "./images/icons/pdf.png";
+import homeIconHeader from "./images/illustration/home-icon-header.svg";
+import descIconHeader from "./images/illustration/descussion-icon-header.svg";
+import courseIconHeader from "./images/illustration/course-icon-header.svg";
 const landSVG = {
   news,
   emploi,
@@ -26,21 +29,26 @@ const landSVG = {
   bgWelcome,
 };
 
+const headerIcons = {
+  homeIconHeader,
+  descIconHeader,
+  courseIconHeader,
+};
 const bottomNavigation = {
   homeICON,
   timelineICON,
   descICON,
   courseICON,
-  tdICON,
+  markICOn,
 };
 const illustrationSVG = {
   loadingLogin,
-  welcome
+  welcome,
 };
 
 const icons = {
   pdf,
-}
+};
 export const Logo = logo;
 
-export { landSVG, illustrationSVG, bottomNavigation , icons};
+export { landSVG, illustrationSVG, bottomNavigation, icons , headerIcons };
