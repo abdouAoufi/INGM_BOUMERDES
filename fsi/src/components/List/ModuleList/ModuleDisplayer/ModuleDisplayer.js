@@ -31,6 +31,7 @@ function ModuleDisplayer() {
                   <option>Select a year </option>
                   <option>2020 - 2021 </option>
                   <option>2019 - 2020</option>
+                  <option>2018 - 2019</option>
                 </select>
               </div>
 

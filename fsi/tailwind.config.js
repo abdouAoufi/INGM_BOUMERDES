@@ -15,6 +15,7 @@ module.exports = {
 
     extend: {
       colors: {
+        primary: "#ff9f68",
         "litlegray" : "#c4c4c4",
         transparent: "transparent",
         current: "currentColor",
@@ -24,13 +25,13 @@ module.exports = {
         indigo: colors.indigo,
         red: colors.rose,
         yellow: colors.amber,
-        primary: "#ff9f68",
         bgcolor: "#fff4e3",
         weakblack: "#575151",
         card_one : "#f3cf7a",
         card_two : "#ffa45c",
         card_three : "#2cb978",
         card_four : "#107a8b",
+        color_add : "#e8ffe8",
       },
       animation: {
         bounce200: "bounce 1s infinite 200ms",
