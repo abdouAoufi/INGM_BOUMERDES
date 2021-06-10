@@ -9,6 +9,7 @@ module.exports = {
       "1/4": "25%",
       "1/2": "50%",
       "3/4": "75%",
+      "19/20": "90%",
       full: "100%",
     },
 
@@ -26,10 +27,10 @@ module.exports = {
         primary: "#ff9f68",
         bgcolor: "#fff4e3",
         weakblack: "#575151",
-        card_one : "#F59A69",
-        card_two : "#5885AF",
-        card_three : "#995485",
-        card_four : "#614CFF",
+        card_one : "#f3cf7a",
+        card_two : "#ffa45c",
+        card_three : "#2cb978",
+        card_four : "#107a8b",
       },
       animation: {
         bounce200: "bounce 1s infinite 200ms",

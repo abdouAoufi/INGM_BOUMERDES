@@ -1,13 +1,20 @@
 import React from "react";
 
-function Semestre({ year, spec, semestre , click}) {
-   let isMaster = year === "Master 1" ? "hidden" : year === "Master 2" ? "hidden" : "block";
+function Semestre({ year, spec, semestre, click }) {
+  let isMaster =
+    year === "Master 1" ? "hidden" : year === "Master 2" ? "hidden" : "block";
   let bg =
-    year === 2 ? "bg-card_one" : year === 3 ? "bg-card_two" : year === "Master 1" ? "bg-card_three" : "bg-card_four";
+    year === 2
+      ? "bg-card_one"
+      : year === 3
+      ? "bg-card_two"
+      : year === "Master 1"
+      ? "bg-card_three"
+      : "bg-card_four";
   return (
     <div
       onClick={click}
-      className={`w-full cursor-pointer rounded-2xl ${bg} p-4 mx-auto my-2 shadow-md`}
+      className={`w-full cursor-pointer rounded-xl ${bg} p-4 mx-auto my-2 shadow-md`}
     >
       <h1 className="mb-3 text-white font-semibold text-3xl  ">
         {year}
