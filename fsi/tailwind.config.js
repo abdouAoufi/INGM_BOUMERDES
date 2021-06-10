@@ -32,6 +32,7 @@ module.exports = {
         card_three : "#2cb978",
         card_four : "#107a8b",
         color_add : "#e8ffe8",
+        color_active_cell : "#b4f1f1",
       },
       animation: {
         bounce200: "bounce 1s infinite 200ms",

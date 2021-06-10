@@ -37,29 +37,7 @@
    font-weight: 300;
 }
 
-.header .container .menu-toggle {
-   width: 25px;
-   height: 25px;
-   background: #fff;
-   padding: 24px;
-   border-radius: 50%;
-   direction: rtl;
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
-   -webkit-box-align: center;
-   -ms-flex-align: center;
-   align-items: center;
-   -webkit-box-pack: center;
-   -ms-flex-pack: center;
-   justify-content: center;
-   -webkit-box-shadow: 0px 10px 30px -14px #000;
-   box-shadow: 0px 10px 30px -14px #000;
-   position: absolute;
-   top: 0;
-   right: 0;
-   cursor: pointer;
-}
+ 
 
 .header .container .menu-toggle span {
    display: block;
@@ -70,7 +48,6 @@
    -webkit-transition: all 300ms ease;
    transition: all 300ms ease;
 }
-
 .header .container .menu-toggle span:not(:last-child) {
    margin-bottom: 5px;
 }
@@ -123,7 +100,7 @@
 
 
 .today-box .breadcrumb {
-   font-weight: 300;
+   font-weight: 500;
    position: relative;
 }
 
@@ -218,10 +195,15 @@
 
 .upcoming-events .container .events-wrapper .event .event__point {
    margin: 0;
-   color: #575151;
+   color:  #ff9f68;
    font-size: 15px;
    font-weight: 800;
    letter-spacing: 1px;
+}
+ 
+.upcoming-events .container .events-wrapper .event  .active-time{
+   color: #f85959;
+   font-size: large;
 }
 
 .upcoming-events .container .events-wrapper .event .event__duration {
@@ -234,22 +216,28 @@
    font-style: italic;
 }
 
-.upcoming-events .container .events-wrapper .event .event__description {
+.event__description {
    margin-top: 10px;
-   color: #ff9f68;
-   font-size: 1rem;
-   font-weight: 400;
+   color: #333;
+   font-size: 1.1rem;
+   font-weight: 500;
+}
+
+.upcoming-events .container .misajour {
+   font-size: larger;
+   color: #c4c4c4;
+
 }
 
 .upcoming-events .container .events-wrapper .event.active {
-   background: #fff4e3;
+   background: #ace7ef;
    /* padding: 17px 0 5px 60px; */
    margin-bottom: 38px;
    border: 0;
    border-radius: 5px;
 }
-
-.upcoming-events .container .events-wrapper .event.active::after {
+ 
+/* .upcoming-events .container .events-wrapper .event.active::after {
    content: "";
    display: block;
    width: 90%;
@@ -263,7 +251,7 @@
    left: 50%;
    -webkit-transform: translatex(-50%);
    transform: translatex(-50%);
-}
+} */
 
 .upcoming-events .container .events-wrapper .event.active i {
    position: absolute;

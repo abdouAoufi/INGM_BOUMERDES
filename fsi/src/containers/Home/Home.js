@@ -15,17 +15,17 @@ import ModuleDisplayer from "../../components/List/ModuleList/ModuleDisplayer/Mo
 function Home(props) {
   const minScroll = 20;
   const authCnt = useContext(AuthContext);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    if (authCnt) {
-      setTimeout(() => {
-        setLoading(false);
-        if (authCnt.status) {
-          props.history.push("/feed");
-        }
-      }, 3000);
-    }
-  }, [authCnt, props.history]);
+  const [loading, setLoading] = useState(false);
+  // useEffect(() => {
+  //   if (authCnt) {
+  //     setTimeout(() => {
+  //       setLoading(false);
+  //       if (authCnt.status) {
+  //         props.history.push("/feed");
+  //       }
+  //     }, 3000);
+  //   }
+  // }, [authCnt, props.history]);
 
   const [showNav, setShowNav] = useState(true);
   const handleScroll = () => {

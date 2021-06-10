@@ -18,6 +18,7 @@ import pdf from "./images/icons/pdf.png";
 import homeIconHeader from "./images/illustration/home-icon-header.svg";
 import descIconHeader from "./images/illustration/descussion-icon-header.svg";
 import courseIconHeader from "./images/illustration/course-icon-header.svg";
+import timeLineIconHeader from "./images/illustration/time-line-icon-header.svg";
 const landSVG = {
   news,
   emploi,
@@ -33,6 +34,7 @@ const headerIcons = {
   homeIconHeader,
   descIconHeader,
   courseIconHeader,
+  timeLineIconHeader,
 };
 const bottomNavigation = {
   homeICON,
@@ -51,4 +53,4 @@ const icons = {
 };
 export const Logo = logo;
 
-export { landSVG, illustrationSVG, bottomNavigation, icons , headerIcons };
+export { landSVG, illustrationSVG, bottomNavigation, icons, headerIcons };
