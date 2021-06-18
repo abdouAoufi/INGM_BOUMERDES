@@ -12,25 +12,14 @@ function Table(props) {
                   <tr>
                     <th
                       scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
+                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
                     >
                       Module
                     </th>
+
                     <th
                       scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
-                    >
-                      TD
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
-                    >
-                      Exam
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
+                      className=" py-3 bg-white  border-b border-gray-200 text-gray-800   text-left  text-sm uppercase font-semibold"
                     >
                       Note
                     </th>
@@ -38,24 +27,15 @@ function Table(props) {
                 </thead>
                 <tbody>
                   {props.data.map((item, index) => (
-                    <tr key={index} className="text-center ">
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+                    <tr key={index} className=" text-left ">
+                      <td className=" py-5 border-b border-gray-200 bg-white text-sm ">
                         <div>
-                          <p className="text-gray-900 whitespace-no-wrap">
+                          <p className="pl-5 text-gray-900 whitespace-no-wrap">
                             {item.NAME}
                           </p>
                         </div>
                       </td>
-                      <td className=" py-5 border-b border-gray-200 bg-white text-sm">
-                        <p className="text-gray-900 whitespace-no-wrap">
-                          {item.TD}
-                        </p>
-                      </td>
-                      <td className="py-5 border-b border-gray-200 bg-white text-sm">
-                        <p className="text-gray-900 whitespace-no-wrap">
-                          {item.EXAM}
-                        </p>
-                      </td>
+
                       <td className=" py-5 border-b border-gray-200 bg-white text-sm">
                         <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                           <span
