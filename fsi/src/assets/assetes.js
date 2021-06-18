@@ -19,6 +19,7 @@ import homeIconHeader from "./images/illustration/home-icon-header.svg";
 import descIconHeader from "./images/illustration/descussion-icon-header.svg";
 import courseIconHeader from "./images/illustration/course-icon-header.svg";
 import timeLineIconHeader from "./images/illustration/time-line-icon-header.svg";
+import noteIconHeader from "./images/illustration/note-icon-header.svg";
 const landSVG = {
   news,
   emploi,
@@ -35,6 +36,7 @@ const headerIcons = {
   descIconHeader,
   courseIconHeader,
   timeLineIconHeader,
+  noteIconHeader,
 };
 const bottomNavigation = {
   homeICON,
