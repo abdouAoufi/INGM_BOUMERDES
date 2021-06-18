@@ -205,6 +205,13 @@
    color: #f85959;
    font-size: large;
 }
+.download{
+   margin-top: 12px;
+   padding: 6px 12px;
+   
+   background: #fff;
+   color: #000;
+}
 
 .upcoming-events .container .events-wrapper .event .event__duration {
    position: absolute;
