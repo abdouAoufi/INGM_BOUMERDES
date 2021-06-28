@@ -6,6 +6,7 @@ import { Route, Switch } from "react-router-dom";
 import Notes from "./Notes/Notes";
 import Courses from "./Courses/Courses";
 import TimeLine from "./TimeLine/TimeLine";
+import Profile from "../Profile/Profile"
 import AuthContext from "../../context/authContext";
 import Loader from "../../components/Loader/Loader";
 import Feed from "./Feed/Feed";
@@ -15,17 +16,17 @@ import ModuleDisplayer from "../../components/List/ModuleList/ModuleDisplayer/Mo
 function Home(props) {
   const minScroll = 20;
   const authCnt = useContext(AuthContext);
-  const [loading, setLoading] = useState(false);
-  // useEffect(() => {
-  //   if (authCnt) {
-  //     setTimeout(() => {
-  //       setLoading(false);
-  //       if (authCnt.status) {
-  //         props.history.push("/feed");
-  //       }
-  //     }, 3000);
-  //   }
-  // }, [authCnt, props.history]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    if (authCnt) {
+      setTimeout(() => {
+        setLoading(false);
+        if (authCnt.status) {
+          props.history.push("/feed");
+        }
+      }, 3000);
+    }
+  }, [authCnt, props.history]);
 
   const [showNav, setShowNav] = useState(true);
   const handleScroll = () => {
@@ -52,6 +53,7 @@ function Home(props) {
         <Switch>
           <Route exact path={"/descussion"} render={Descussion} />
           <Route exact path={"/feed"} render={() => <Feed />} />
+          <Route  path={"/profile"} component={Profile} />
           <Route path={"/course"} component={Courses} />
           <Route path={"/timeline"} component={TimeLine} />
           <Route path={"/semester/list/module"} component={ModuleDisplayer} />

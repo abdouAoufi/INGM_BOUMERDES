@@ -20,6 +20,7 @@ import descIconHeader from "./images/illustration/descussion-icon-header.svg";
 import courseIconHeader from "./images/illustration/course-icon-header.svg";
 import timeLineIconHeader from "./images/illustration/time-line-icon-header.svg";
 import noteIconHeader from "./images/illustration/note-icon-header.svg";
+import backIcon from "./images/icons/back.svg"
 const landSVG = {
   news,
   emploi,
@@ -52,6 +53,7 @@ const illustrationSVG = {
 
 const icons = {
   pdf,
+  backIcon
 };
 export const Logo = logo;
 

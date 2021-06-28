@@ -8,7 +8,7 @@ import Aux from "../hoc/Aux";
 import { useState } from "react";
 
 function App() {
-  const [isAuth, setAuth] = useState(false);
+  const [isAuth, setAuth] = useState(true);
   const authHandler = () => {
     setAuth(!isAuth);
   };

@@ -1,7 +1,15 @@
 import React from "react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Link } from "react-router-dom";
+import { Fragment } from "react";
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 function PostCard(props) {
-  const btnClass = "mb-1 md:mb-0 bg-white px-5 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 "
+  const btnClass =
+    "mb-1 md:mb-0 bg-white px-5 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ";
   return (
     <div className=" m-auto lg:shadow w-full bg-white text-black border my-2 rounded-md px-2 py-1">
       <div className="flex-none ">
@@ -14,25 +22,92 @@ function PostCard(props) {
             />
             <h2 className="text-lg font-semibold">{props.name}</h2>
           </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-            />
-          </svg>
+
+          <Menu as="div" className="ml-3 relative">
+            {({ open }) => (
+              <>
+                <div>
+                  <Menu.Button className=" flex text-sm rounded-full focus:outline-none ">
+                    <span className="sr-only">Open user menu</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 cursor-pointer"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="#c4c4c4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
+                      />
+                    </svg>
+                  </Menu.Button>
+                </div>
+                <Transition
+                  show={open}
+                  as={Fragment}
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                >
+                  <Menu.Items
+                    static
+                    className="origin-top-right border absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  >
+                    <Menu.Item>
+                      {({ active }) => (
+                        <Link
+                          to="/"
+                          className={classNames(
+                            active ? "bg-gray-100" : "",
+                            "block px-4 py-2 text-sm text-gray-700"
+                          )}
+                        >
+                          Save post
+                        </Link>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <Link
+                          to="/"
+                          className={classNames(
+                            active ? "bg-gray-100" : "",
+                            "block px-4 py-2 text-sm text-gray-700"
+                          )}
+                        >
+                          Remove
+                        </Link>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <Link
+                          to="/"
+                          className={classNames(
+                            active ? "bg-gray-100" : "",
+                            "block px-4 py-2 text-sm text-gray-700"
+                          )}
+                        >
+                          Report
+                        </Link>
+                      )}
+                    </Menu.Item>
+                  </Menu.Items>
+                </Transition>
+              </>
+            )}
+          </Menu>
         </div>
         <div className="rounded-lg overflow-hidden h-full w-full   lg:mb-0 ">
           <img
             className="object-fit w-full"
-            src="https://images.unsplash.com/photo-1585254208021-9f33921350a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            src={props.image}
             alt={props.title}
           />
         </div>
@@ -42,7 +117,9 @@ function PostCard(props) {
             <div className="w-full italic flex-none text-xs text-blue-700 font-medium ">
               {props.tag}
             </div>
-            <h2 className="flex-auto text-medium font-semibold">{props.title}</h2>
+            <h2 className="flex-auto text-medium font-semibold">
+              {props.title}
+            </h2>
           </div>
 
           <p className="w-full mb-2 text-gray-600 flex-none text-sm font-medium">
@@ -70,7 +147,7 @@ function PostCard(props) {
                     />
                   </svg>
                 </span>
-                <span>16 Like</span>
+                <span>{props.like}</span>
               </button>
 
               <button className={btnClass}>
@@ -90,7 +167,7 @@ function PostCard(props) {
                     />
                   </svg>
                 </span>
-                <span>3 comment</span>
+                <span>{props.comments}</span>
               </button>
             </div>
           </div>
